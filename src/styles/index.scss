@@ -1,0 +1,81 @@
+@import './fonts';
+
+@import './palette';
+
+* { box-sizing: border-box }
+
+html{
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: var(--dark);
+  font-weight: 700;
+  background: var(--muted);
+  font-family: var(--regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, select, textarea, button {
+  padding: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  color: var(--white);
+  font-family: inherit;
+}
+
+.noselect {
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: darken(#DCDDE4,5);
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 4rem 1fr;
+  background-color: var(--muted);
+  overflow-y: scroll;
+
+  .avatar, .logo {
+    @extend .noselect;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    &:hover { transform: scale(1.1) }
+  }
+
+  @import url(./app-body.scss);
+
+}
+
+@media all and (min-device-width: 320px) and (max-device-width: 720px) {
+
+  .App {
+    grid-template-columns: 100vw;
+    grid-template-rows: 4rem 1fr;
+  }
+
+}

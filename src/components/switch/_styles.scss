@@ -1,0 +1,45 @@
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input[type=checkbox]{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  label {
+    width: 2rem;
+    height: 1rem;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2rem;
+    background: #16243B;
+    color: var(--muted);
+    outline: none;
+  }
+
+  label:after {
+    content: '';
+    top: -.3rem;
+    left: -1rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    border-radius: 50%;
+    background: var(--white);
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:checked + label {
+    background: var(--blue);
+  }
+
+  input:checked + label:after {
+    left: calc(100% + .5rem);
+    transform: translateX(-100%);
+  }
+
+}

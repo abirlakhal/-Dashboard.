@@ -1,0 +1,180 @@
+.medical-record {
+  height: 100%;
+  display: grid;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: .5rem;
+  background: var(--white);
+  border: 1px solid #DCDDE4;
+  box-shadow: var(--shadow);
+  transition: all .3s ease-in-out;
+  grid-template-columns: 5.5rem 1fr;
+
+  &:hover {
+    border-color: var(--blue);
+    .document {
+      border-color: var(--blue) !important;
+    }
+  }
+
+  .document {
+    width: 5.5rem;
+    background: var(--white);
+    transition: all .3s ease-in-out;
+    border-right: 1px solid #DCDDE4;
+
+    .icon {
+      margin-top: 1rem;
+      margin-left: 1rem;
+      font-size: 1rem;
+    }
+
+    .institution {
+      padding: 1rem;
+      font-size: .7rem;
+      line-height: 1.4;
+      padding-top: .5rem;
+    }
+
+    .page-count {
+      text-align: center;
+      font-size: .7rem;
+      font-weight: 500;
+      padding: .25rem 0;
+      color: var(--white);
+      background: var(--blue);
+    }
+
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    padding: 1rem .75rem;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: 0.02rem;
+      text-transform: uppercase;
+    }
+
+    .date {
+      font-weight: 600;
+      margin-top: .25rem;
+    }
+
+    .stats {
+      display: flex;
+      margin-top: .75rem;
+      align-items: center;
+      justify-self: flex-end;
+
+      .statistic {
+        margin-right: 1rem;
+
+        .count {
+          display: flex;
+          align-items: center;
+          .value {
+            line-height: 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-right: .15rem;
+          }
+          .icon {
+            display: flex;
+            font-size: .8rem;
+            border-radius: 50%;
+            color: var(--white);
+            align-items: flex-end;
+            justify-content: center;
+            &.up { background: var(--green) }
+            &.down { background: var(--red) }
+          }
+        }
+
+        .label {
+          opacity: .8;
+          font-size: .6rem;
+          font-weight: 700;
+          margin-top: 0.45rem;
+          letter-spacing: 0.01rem;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media all and (min-device-width: 320px) and (max-device-width: 720px) {
+
+  .medical-record {
+    box-shadow: none;
+    grid-template-columns: auto 1fr;
+
+    .document {
+      width: 5.5rem;
+      display: grid;
+      overflow: hidden;
+      justify-content: space-between;
+      grid-template-rows: auto 1fr auto;
+
+      .institution {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+      }
+
+      .page-count {
+        font-size: .6rem;
+      }
+
+    }
+
+    .content {
+
+      .title {
+        font-size: .8rem;
+      }
+
+      .date {
+        font-size: .6rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+
+      .stats {
+
+        .statistic {
+          margin-right: 1rem;
+
+          .count {
+            .value {
+              font-size: .9rem;
+            }
+            .icon {
+              font-size: .7rem;
+            }
+          }
+
+          .label {
+            opacity: .6;
+            font-size: .5rem;
+            margin-top: 0.45rem;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
